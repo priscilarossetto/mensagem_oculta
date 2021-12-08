@@ -3,8 +3,6 @@
 body{
     background-image: radial-gradient(#e2b0ff, #9198e5);
     margin: 15px;
-    height: 100%;
-    width: 100%;
 }
 
 form {
@@ -64,8 +62,11 @@ footer{
     font-weight: bold;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
     body, form, main, footer {
      width: 100%;
+     height: auto;
+     display: inline-flex;
+     flex-wrap: wrap;
     }
 }
