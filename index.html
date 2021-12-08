@@ -5,25 +5,58 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mensagem Oculta</title>
+        <link rel="stylesheet" href="./reset.css">
         <link rel="stylesheet" href="./index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Smooch&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Mensagem Oculta</h1>
         <form>
-            <label for="mensagem">Insira sua mensagem:</label><br>
-            <input type="text"><br>
-            <p>Selecione a codificação:</p>
-            <input type="radio" id="cifra" name="codigo" value="Cifra de César">
-            <label for="cifra">Cifra de César</label>
-            <input type="radio" id="base" name="codigo" value="Base64">
-            <label for="base">Base64</label><br><br>
-            <input type="radio" id="codigo" name="codigo" value="Codificar">
-            <label for="codigo">Codificar</label>
-            <input type="radio" id="codigo" name="codigo" value="Decodificar">
-            <label for="codigo">Decodificar</label><br><br>
-            <button>Codificar</button>
-            <button>Decodificar</button>
-        </form>
+            <header>
+                <h1>Mensagem Oculta</h1>
+            </header>
+
+            <main>
+                <label for="mensagem">Digite sua mensagem aqui:</label>
+                <br>
+                <input type="text" id="texto">
+                <br><br>
+                <label for="define">Selecione a codificação:</label>
+                <br>
+
+                    <select id="define">
+                        <option value="nulo" disabled selected>Selecione opção</option>
+                        <option value="cifra" id="cifra">Cifra de César</option>
+                        <option value="base" id="base">Base64</option><br><br>
+                    </select>
+                    <br><br>
+
+                    <div class="incrementoCifra" style="display:none;" id="incrementoCifra">
+                        <label for="incremento">Defina o incremento (1 a 25)</label>
+                        <input type="number" id="incremento" default="0" min="1" max="25">
+                    </div>
+
+                    <input class="radio" type="radio" id="codificar" name="botao" value="codificar" checked="checked">
+                    <label for="codificar">Codificar</label>
+                    <input class="radio" type="radio" id="decodificar" name="botao" value="decodificar">
+                    <label for="decodificar">Decodificar</label>
+                    <br><br>
+
+                    <button id="btnEnvio" type="submit">Enviar</button>
+                    <br><br>
+
+                    <label for="resultado">Resultado da sua mensagem:</label>
+                    <br>
+                    <div class="resultadoFinal">
+                        <textarea type="text" id="resultadoMensagem" rows="5" cols="50"></textarea>
+                    </div>
+                </main>
+            </form>
+
+            <footer>
+                Desenvolvido por Priscila Rosseto 2021 - projeto Resilia Educação
+            </footer>
+
         <script src="./index.js"></script>
     </body>
 </html>
